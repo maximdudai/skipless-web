@@ -11,6 +11,10 @@ import {
   X,
   Play,
   CheckCircle2,
+  Wifi,
+  Battery,
+  ListTodo,
+  Settings,
 } from 'lucide-react';
 
 interface FaqItem {
@@ -244,153 +248,217 @@ export default function App() {
           <div className="mockup-wrapper" id="simulator">
             <div className="mockup-glow" />
 
-            <div className="iphone-frame">
-              {/* Dynamic Island */}
-              <div className="dynamic-island">
-                <div className="island-camera" />
-              </div>
-
-              {/* In-app Simulator Header */}
-              <div className="mockup-app-header">
-                <div>
-                  <div className="mockup-app-title">SKIPLESS</div>
-                  <div className="mockup-app-subtitle">Sessão Ativa • Protocolo 01</div>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span style={{ fontSize: '11px', color: '#8e8e93', fontFamily: 'monospace' }}>
-                    {scheduledTime}
-                  </span>
-                  <div
-                    style={{
-                      width: '6px',
-                      height: '6px',
-                      borderRadius: '50%',
-                      background: escalationLevel > 2 ? '#ff453a' : '#ff9f0a',
-                    }}
-                  />
-                </div>
-              </div>
-
-              {/* Inside Mockup Card */}
-              {!isFocusActive ? (
-                <div
-                  className={`mockup-card ${
-                    escalationLevel >= 3 ? 'card-silenced' : escalationLevel >= 1 ? 'card-important' : ''
-                  }`}
-                >
-                  <div className="mockup-card-header">
-                    {getEscalationBadge()}
-                    <span className="mockup-time-text">{scheduledTime}</span>
+            <div className="iphone-stage">
+              <div className="iphone-scaler">
+                <div className="iphone-frame">
+                  {/* iOS Status Bar */}
+                  <div className="iphone-status-bar">
+                    <span className="status-time">09:41</span>
+                    <div className="dynamic-island">
+                      <div className="island-camera" />
+                    </div>
+                    <div className="status-icons">
+                      <Wifi size={13} strokeWidth={2.5} />
+                      <Battery size={15} strokeWidth={2.5} />
+                    </div>
                   </div>
 
-                  <h3 className="mockup-card-title">
-                    Submeter relatório de contas à administração
-                  </h3>
-
-                  <div
-                    className={`mockup-card-outcome ${
-                      escalationLevel >= 3 ? 'outcome-red' : ''
-                    }`}
-                  >
-                    {escalationLevel >= 3
-                      ? '⚠️ CONSEQ.: Chamada de emergência com CEO às 09h30'
-                      : 'Se falhar: Reunião de emergência com CEO às 09h30'}
-                  </div>
-
-                  {/* Actions inside Mockup */}
-                  <div className="mockup-actions-row">
-                    <button
-                      type="button"
-                      className="mockup-btn mockup-btn-start"
-                      onClick={handleStartFocus}
-                    >
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
-                        <Play size={12} fill="#000000" />
-                        <span>COMEÇAR (10m)</span>
+                  {/* In-app Simulator Header with Logo */}
+                  <div className="mockup-app-header">
+                    <div className="mockup-brand-row">
+                      <img
+                        src="/logo-symbol.png"
+                        alt="Skipless"
+                        className="mockup-logo-img"
+                      />
+                      <div>
+                        <div className="mockup-app-title">SKIPLESS</div>
+                        <div className="mockup-app-subtitle">Sessão Ativa • Protocolo 01</div>
                       </div>
-                    </button>
-
-                    <button
-                      type="button"
-                      className="mockup-btn mockup-btn-snooze"
-                      onClick={handleSnooze}
-                      title="Adiar prazo 30 minutos"
-                    >
-                      ADIAR (+30m)
-                    </button>
-
-                    <button
-                      type="button"
-                      className="mockup-btn mockup-btn-ignore"
-                      onClick={handleIgnore}
-                      title="Simula ignorar o alerta"
-                    >
-                      IGNORAR
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                /* Focus mode screen */
-                <div className="mockup-focus-box">
-                  <div className="mockup-focus-tag">BLOCO DE IMERSÃO ATIVO</div>
-                  <div className="mockup-focus-timer">{formatTimer(timerSeconds)}</div>
-
-                  <div className="mockup-progress-track">
-                    <div
-                      className="mockup-progress-fill"
-                      style={{ width: `${((600 - timerSeconds) / 600) * 100}%` }}
-                    />
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <span style={{ fontSize: '12px', color: '#8e8e93', fontFamily: 'monospace', fontWeight: 600 }}>
+                        {scheduledTime}
+                      </span>
+                      <div
+                        style={{
+                          width: '7px',
+                          height: '7px',
+                          borderRadius: '50%',
+                          background: escalationLevel > 2 ? '#ff453a' : '#ff9f0a',
+                          boxShadow: escalationLevel > 2 ? '0 0 8px #ff453a' : '0 0 6px #ff9f0a',
+                        }}
+                      />
+                    </div>
                   </div>
 
-                  <p style={{ fontSize: '11px', color: '#8e8e93', marginBottom: '14px' }}>
-                    Sem alternância de ecrãs. Mantém o foco até o alarme disparar.
-                  </p>
+                  {/* Simulator Screen Body */}
+                  <div className="mockup-screen-body">
+                    {!isFocusActive ? (
+                      <>
+                        <div className="mockup-section-label">Execução Imediata</div>
+                        <div
+                          className={`mockup-card ${
+                            escalationLevel >= 3 ? 'card-silenced' : escalationLevel >= 1 ? 'card-important' : ''
+                          }`}
+                        >
+                          <div className="mockup-card-header">
+                            {getEscalationBadge()}
+                            <span className="mockup-time-text">{scheduledTime}</span>
+                          </div>
 
-                  <div style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
-                    <button
-                      type="button"
-                      className="mockup-focus-stop"
-                      onClick={() => {
-                        setIsFocusActive(false);
-                        setFeedbackToast('Sessão terminada antes do tempo.');
-                      }}
-                    >
-                      Desistir
-                    </button>
-                    <button
-                      type="button"
-                      className="mockup-btn mockup-btn-start"
-                      style={{ padding: '6px 14px', fontSize: '11px' }}
-                      onClick={() => {
-                        setIsFocusActive(false);
-                        setEscalationLevel(0);
-                        setFeedbackToast('Tarefa concluída! Registo arquivado com sucesso.');
-                      }}
-                    >
-                      Concluir Agora
-                    </button>
+                          <h3 className="mockup-card-title">
+                            Submeter relatório de contas à administração
+                          </h3>
+
+                          <div
+                            className={`mockup-card-outcome ${
+                              escalationLevel >= 3 ? 'outcome-red' : ''
+                            }`}
+                          >
+                            {escalationLevel >= 3
+                              ? '⚠️ CONSEQ.: Chamada de emergência com CEO às 09h30'
+                              : 'Se falhar: Reunião de emergência com CEO às 09h30'}
+                          </div>
+
+                          {/* Actions inside Mockup */}
+                          <div className="mockup-actions-row">
+                            <button
+                              type="button"
+                              className="mockup-btn mockup-btn-start"
+                              onClick={handleStartFocus}
+                            >
+                              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
+                                <Play size={12} fill="#000000" />
+                                <span>COMEÇAR (10m)</span>
+                              </div>
+                            </button>
+
+                            <button
+                              type="button"
+                              className="mockup-btn mockup-btn-snooze"
+                              onClick={handleSnooze}
+                              title="Adiar prazo 30 minutos"
+                            >
+                              ADIAR (+30m)
+                            </button>
+
+                            <button
+                              type="button"
+                              className="mockup-btn mockup-btn-ignore"
+                              onClick={handleIgnore}
+                              title="Simula ignorar o alerta"
+                            >
+                              IGNORAR
+                            </button>
+                          </div>
+                        </div>
+
+                        {/* Secondary protocol preview */}
+                        <div className="mockup-section-label">A Seguir Hoje</div>
+                        <div className="mockup-card-secondary">
+                          <div className="mockup-card-header">
+                            <span className="mockup-badge">AGENDADO</span>
+                            <span className="mockup-time-text">18:30</span>
+                          </div>
+                          <div style={{ fontSize: '13px', fontWeight: 700, color: '#f5f5f7', marginBottom: '3px' }}>
+                            Corrida e mobilidade (5km)
+                          </div>
+                          <div style={{ fontSize: '11px', color: '#8e8e93' }}>
+                            Se falhar: Sem ecrãs após as 21h00
+                          </div>
+                        </div>
+
+                        <div className="mockup-local-notice">
+                          <Lock size={12} color="#30d158" />
+                          <span>Armazenamento SQLite Local • Zero Conexões Cloud</span>
+                        </div>
+                      </>
+                    ) : (
+                      /* Focus mode screen */
+                      <div className="mockup-focus-box">
+                        <div className="mockup-focus-tag">BLOCO DE IMERSÃO ATIVO</div>
+                        <div className="mockup-focus-timer">{formatTimer(timerSeconds)}</div>
+
+                        <div className="mockup-progress-track">
+                          <div
+                            className="mockup-progress-fill"
+                            style={{ width: `${((600 - timerSeconds) / 600) * 100}%` }}
+                          />
+                        </div>
+
+                        <p style={{ fontSize: '12px', color: '#8e8e93', marginBottom: '18px', lineHeight: 1.5 }}>
+                          Sem alternância de ecrãs. Mantém o foco até o alarme disparar.
+                        </p>
+
+                        <div style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
+                          <button
+                            type="button"
+                            className="mockup-focus-stop"
+                            onClick={() => {
+                              setIsFocusActive(false);
+                              setFeedbackToast('Sessão terminada antes do tempo.');
+                            }}
+                          >
+                            Desistir
+                          </button>
+                          <button
+                            type="button"
+                            className="mockup-btn mockup-btn-start"
+                            style={{ padding: '8px 16px', fontSize: '12px' }}
+                            onClick={() => {
+                              setIsFocusActive(false);
+                              setEscalationLevel(0);
+                              setFeedbackToast('Tarefa concluída! Registo arquivado com sucesso.');
+                            }}
+                          >
+                            Concluir Agora
+                          </button>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Toast inside Simulator */}
+                    {feedbackToast && (
+                      <div
+                        style={{
+                          marginTop: 'auto',
+                          marginBottom: '4px',
+                          padding: '9px 12px',
+                          borderRadius: '10px',
+                          background: '#1f1f28',
+                          fontSize: '11px',
+                          color: '#ff9f0a',
+                          fontWeight: 700,
+                          textAlign: 'center',
+                          border: '1px solid #353545',
+                        }}
+                      >
+                        {feedbackToast}
+                      </div>
+                    )}
                   </div>
-                </div>
-              )}
 
-              {/* Toast inside Simulator */}
-              {feedbackToast && (
-                <div
-                  style={{
-                    marginTop: '14px',
-                    padding: '8px 12px',
-                    borderRadius: '8px',
-                    background: '#23232c',
-                    fontSize: '11px',
-                    color: '#ff9f0a',
-                    fontWeight: 600,
-                    textAlign: 'center',
-                    border: '1px solid #353542',
-                  }}
-                >
-                  {feedbackToast}
+                  {/* Tab Bar inside Mockup */}
+                  <div className="mockup-tab-bar">
+                    <div className="mockup-tab-item active">
+                      <ListTodo size={17} />
+                      <span>Tarefas</span>
+                    </div>
+                    <div className="mockup-tab-item">
+                      <Clock size={17} />
+                      <span>Foco</span>
+                    </div>
+                    <div className="mockup-tab-item">
+                      <Settings size={17} />
+                      <span>Definições</span>
+                    </div>
+                  </div>
+
+                  {/* iOS Home Indicator */}
+                  <div className="iphone-home-indicator" />
                 </div>
-              )}
+              </div>
             </div>
 
             <div className="mockup-hint">
@@ -648,18 +716,16 @@ export default function App() {
 
           <div className="footer-links">
             <a
-              href="https://github.com/maximdudai/skipless"
-              target="_blank"
-              rel="noreferrer"
-              className="footer-link"
-            >
-              GitHub (Repositório Móvel)
-            </a>
-            <a
               href="#manifesto"
               className="footer-link"
             >
               Manifesto
+            </a>
+            <a
+              href="#features"
+              className="footer-link"
+            >
+              Mecânica
             </a>
             <a
               href="#faq"
