@@ -368,11 +368,6 @@ export default function App() {
                             Se falhar: Sem ecrãs após as 21h00
                           </div>
                         </div>
-
-                        <div className="mockup-local-notice">
-                          <Lock size={12} color="#30d158" />
-                          <span>Armazenamento SQLite Local • Zero Conexões Cloud</span>
-                        </div>
                       </>
                     ) : (
                       /* Focus mode screen */
