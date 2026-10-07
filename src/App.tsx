@@ -168,7 +168,7 @@ export default function App() {
       <header className="navbar">
         <div className="container nav-content">
           <a href="#" className="nav-brand">
-            <img src="/logo-symbol.png" alt="Skipless Logo" className="nav-logo" />
+            <img src="./logo-symbol.png" alt="Skipless Logo" className="nav-logo" />
             <span className="nav-title">SKIPLESS</span>
             <span className="nav-badge">TESTFLIGHT V1.0</span>
           </a>
@@ -267,7 +267,7 @@ export default function App() {
                   <div className="mockup-app-header">
                     <div className="mockup-brand-row">
                       <img
-                        src="/logo-symbol.png"
+                        src="./logo-symbol.png"
                         alt="Skipless"
                         className="mockup-logo-img"
                       />
@@ -704,7 +704,7 @@ export default function App() {
       <footer className="footer">
         <div className="container footer-content">
           <div className="footer-brand">
-            <img src="/logo-symbol.png" alt="Skipless Logo" style={{ width: '24px', height: '24px', borderRadius: '6px' }} />
+            <img src="./logo-symbol.png" alt="Skipless Logo" style={{ width: '24px', height: '24px', borderRadius: '6px' }} />
             <span style={{ fontWeight: 800, letterSpacing: '1px', color: '#ffffff' }}>SKIPLESS</span>
             <span style={{ marginLeft: '12px' }}>— You Cannot Skip What Matters.</span>
           </div>
