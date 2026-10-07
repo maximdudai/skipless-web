@@ -1049,7 +1049,7 @@ body {
   color: #ffffff;
 }
 
-/* Responsive Media Queries */
+/* Responsive Media Queries & Mobile Accessibility */
 @media (max-width: 900px) {
   .hero-title {
     font-size: 44px;
@@ -1065,12 +1065,201 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  .container {
+    padding: 0 18px;
+  }
+  .hero-section {
+    padding-top: 110px;
+    padding-bottom: 50px;
+  }
+  .hero-title {
+    font-size: 38px;
+    letter-spacing: -1px;
+  }
+  .hero-subtitle {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
   .iphone-stage {
-    width: 265px;
-    height: 574px;
+    width: 280px;
+    height: 608px;
   }
   .iphone-scaler {
-    transform: scale(0.68);
+    transform: scale(0.72);
+  }
+  .thesis-section,
+  .features-section,
+  .stats-section,
+  .faq-section {
+    padding: 64px 0;
+  }
+  .section-heading {
+    font-size: 28px;
+    letter-spacing: -0.5px;
+  }
+  .section-lead {
+    font-size: 15px;
+    margin-bottom: 34px;
+  }
+  .comparison-card,
+  .feature-box,
+  .testimonial-card {
+    padding: 22px 18px;
+    border-radius: 14px;
+  }
+  .comparison-title {
+    font-size: 20px;
+  }
+  .comparison-item {
+    font-size: 13px;
+  }
+  .feature-box-title {
+    font-size: 17px;
+  }
+  .feature-box-desc {
+    font-size: 13px;
+  }
+  .stat-number {
+    font-size: 40px;
+  }
+  .stat-label {
+    font-size: 11px;
+  }
+  .cta-banner {
+    padding: 42px 20px;
+    margin: 40px 0 60px;
+    border-radius: 18px;
+  }
+  .cta-heading {
+    font-size: 26px;
+  }
+  .cta-lead {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .faq-question {
+    padding: 16px 18px;
+    font-size: 14px;
+    min-height: 48px;
+  }
+  .faq-answer {
+    padding: 0 18px 16px;
+    font-size: 13px;
+  }
+  .footer {
+    padding: 32px 0;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 520px) {
+  .navbar {
+    height: 64px;
+  }
+  .nav-badge {
+    display: none;
+  }
+  .nav-title {
+    font-size: 17px;
+  }
+  .btn-nav-cta {
+    padding: 7px 12px;
+    font-size: 12px;
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .hero-pill {
+    font-size: 10px;
+    padding: 5px 10px;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+  .hero-section {
+    padding-top: 96px;
+    padding-bottom: 36px;
+  }
+  .hero-title {
+    font-size: 30px;
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+  }
+  .hero-subtitle {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+  .waitlist-form {
+    flex-direction: column;
+    padding: 8px;
+    gap: 8px;
+    border-radius: 14px;
+  }
+  .waitlist-input {
+    font-size: 16px; /* Prevents auto-zoom on iOS Safari */
+    padding: 12px 14px;
+    text-align: center;
+  }
+  .waitlist-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    min-height: 46px;
+    border-radius: 8px;
+  }
+  .hero-trust-row {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+  .hero-trust-item {
+    font-size: 11px;
+  }
+  .mockup-wrapper {
+    margin: 32px auto 16px;
+  }
+  .iphone-stage {
+    width: 250px;
+    height: 540px;
+  }
+  .iphone-scaler {
+    transform: scale(0.64);
+  }
+  .mockup-hint {
+    font-size: 11px;
+    line-height: 1.4;
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 27px;
+  }
+  .iphone-stage {
+    width: 230px;
+    height: 498px;
+  }
+  .iphone-scaler {
+    transform: scale(0.59);
   }
 }
