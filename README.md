@@ -1,32 +1,39 @@
-# React + TypeScript + Vite
+# Skipless Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Landing page oficial do **Skipless**, a app de foco para iPhone criada para ajudar utilizadores a executar tarefas importantes sem procrastinar.
 
-Currently, two official plugins are available:
+## Proposta de valor
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Foco em execução real, sem gamificação vazia.
+- Compromisso e responsabilidade no dia a dia.
+- Privacidade por padrão.
 
-## React Compiler
+## Website
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+A página foi otimizada para:
 
-## Expanding the Oxlint configuration
+- comunicação orientada a benefício para utilizador final;
+- captação de leads para a waitlist;
+- melhores sinais de SEO e partilha social (Open Graph, Twitter e dados estruturados).
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Desenvolvimento local
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Build e validação
+
+```bash
+npm run lint
+npm run build
+```
+
+## Deploy
+
+O deploy para GitHub Pages é feito pelo workflow:
+
+`/home/runner/work/skipless-web/skipless-web/.github/workflows/deploy.yml`
+
+Ele é acionado em push para `main` ou manualmente via `workflow_dispatch`.

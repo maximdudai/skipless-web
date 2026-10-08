@@ -25,19 +25,19 @@ interface FaqItem {
 const faqs: FaqItem[] = [
   {
     q: 'Porque é que o Skipless não tem streaks ou gamificação?',
-    a: 'Porque streaks criam falsa sensação de produtividade e ansiedade contraproducente. No dia em que perdes uma streak de 40 dias, a probabilidade de abandonares o hábito duplica. O Skipless trata-te como um adulto funcional: o foco é a execução da tarefa atual, sem pontuações ou confetis infantis.',
+    a: 'Porque o nosso foco é ajudar-te a concluir tarefas reais, não a colecionar pontos. Em vez de te prender a streaks, o Skipless mantém a tua atenção no próximo passo importante e reduz a culpa digital.',
   },
   {
     q: 'O que acontece quando ignoro repetidamente uma tarefa?',
-    a: 'O motor de escalonamento do Skipless monitoriza o número de vezes que uma notificação foi silenciada ou ignorada. A partir de 3 rejeições consecutivas, a tarefa é promovida automaticamente a estado Urgente/Crítico, aumentando o volume de insistência sonora e destacando a consequência real que tu próprio definiste.',
+    a: 'O alerta fica mais visível e mais insistente para te trazer de volta ao que é importante. Assim evitas o ciclo de “depois faço” que transforma pequenas tarefas em atrasos maiores.',
   },
   {
     q: 'Os meus dados ou tarefas são enviados para algum servidor?',
-    a: 'Absolutamente nada. O Skipless é 100% Local-First. As tuas tarefas, horários e consequências ficam guardadas exclusivamente na base de dados SQLite protegida no chip do teu próprio iPhone. Zero contas, zero cookies, zero telemetria na nuvem.',
+    a: 'Não. O Skipless foi criado para privacidade total: os teus dados ficam no teu iPhone, sem conta obrigatória e sem rastreamento para anúncios.',
   },
   {
     q: 'Como funciona o acesso antecipado ao TestFlight?',
-    a: 'Estamos a aprovar vagas em lotes fechados de 200 utilizadores para garantir feedback de alta densidade técnica. Ao registares o teu email na lista de espera, recebes um link direto de convite para instalar a versão Beta oficial via Apple TestFlight assim que o teu lote for ativado.',
+    a: 'Ao entrares na lista de espera, recebes o convite por email assim que abrirmos novas vagas. A ativação é feita por ordem para garantir uma experiência estável para todos.',
   },
   {
     q: 'A aplicação vai estar disponível para Android?',
@@ -174,10 +174,10 @@ export default function App() {
           </a>
 
           <nav className="nav-links">
-            <a href="#manifesto" className="nav-link">O Manifesto</a>
-            <a href="#features" className="nav-link">Mecânica</a>
+            <a href="#manifesto" className="nav-link">Como Funciona</a>
+            <a href="#features" className="nav-link">Benefícios</a>
             <a href="#simulator" className="nav-link">Simulador</a>
-            <a href="#stats" className="nav-link">Impacto</a>
+            <a href="#stats" className="nav-link">Resultados</a>
             <a href="#faq" className="nav-link">FAQ</a>
           </nav>
 
@@ -192,7 +192,7 @@ export default function App() {
         <div className="container">
           <div className="hero-pill">
             <span className="hero-pill-dot" />
-            <span>O PROTOCOLO ANTI-PROCRASTINAÇÃO PARA IOS</span>
+            <span>A APP DE FOCO E RESPONSABILIDADE PARA IPHONE</span>
           </div>
 
           <h1 className="hero-title">
@@ -200,8 +200,8 @@ export default function App() {
           </h1>
 
           <p className="hero-subtitle">
-            A maioria das to-do lists serve apenas para arquivar tarefas que nunca vais fazer.
-            O Skipless força decisões binárias com pressão progressiva, timers irreversíveis e zero desculpas.
+            Para de adiar as tarefas que mudam o teu dia.
+            O Skipless transforma intenção em ação com foco imediato, lembretes inteligentes e compromisso real.
           </p>
 
           {/* Waitlist Form */}
@@ -240,7 +240,7 @@ export default function App() {
             </div>
             <div className="hero-trust-item">
               <Smartphone size={14} color="#ff9f0a" />
-              <span>Nativo em Swift & Expo</span>
+              <span>Feito para rotina real</span>
             </div>
           </div>
 
@@ -457,7 +457,7 @@ export default function App() {
             </div>
 
             <div className="mockup-hint">
-              ⚡ Simulador Interativo: experimenta clicar em <strong>COMEÇAR</strong> ou <strong>IGNORAR</strong> para veres a resposta imediata do motor.
+              ⚡ Simulador Interativo: experimenta clicar em <strong>COMEÇAR</strong> ou <strong>IGNORAR</strong> para sentir como o Skipless responde na prática.
             </div>
           </div>
         </div>
@@ -466,57 +466,57 @@ export default function App() {
       {/* The Anti-To-Do Thesis Section */}
       <section className="thesis-section" id="manifesto">
         <div className="container">
-          <div className="section-tag">O PARADIGMA</div>
-          <h2 className="section-heading">Porque as outras apps te deixam procrastinar.</h2>
+          <div className="section-tag">A DIFERENÇA</div>
+          <h2 className="section-heading">Porque o Skipless converte planos em execução.</h2>
           <p className="section-lead">
-            As aplicações comerciais foram desenhadas para que passes o dia a organizar listas bonitas em vez de executares. O Skipless foi desenhado para te fazer fechar o telemóvel.
+            Menos organização infinita, mais progresso concreto no que importa para a tua vida e trabalho.
           </p>
 
           <div className="comparison-grid">
             {/* Traditional Apps */}
             <div className="comparison-card card-traditional">
-              <div className="comparison-badge badge-fail">O CEMITÉRIO DO CONFORTO</div>
-              <h3 className="comparison-title">Apps de Tarefas Comuns</h3>
+              <div className="comparison-badge badge-fail">ABORDAGEM ANTIGA</div>
+              <h3 className="comparison-title">Apps Tradicionais</h3>
               <ul className="comparison-list">
                 <li className="comparison-item">
                   <X size={18} color="#ff453a" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <span><strong>Listas infinitas de 200 itens:</strong> Tornam-se silos de culpa acumulada onde as tarefas morrem esquecidas.</span>
+                  <span><strong>Listas sem fim:</strong> tudo parece urgente, mas poucas tarefas saem do papel.</span>
                 </li>
                 <li className="comparison-item">
                   <X size={18} color="#ff453a" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <span><strong>Gamificação infantil:</strong> Streaks artificiais, confetis e níveis que te dão falsa dopamina sem trabalho real.</span>
+                  <span><strong>Gamificação vazia:</strong> gera distração e sensação de progresso sem resultado real.</span>
                 </li>
                 <li className="comparison-item">
                   <X size={18} color="#ff453a" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <span><strong>Adiar indefinidamente sem atrito:</strong> Carregas em "Amanhã" dez vezes seguidas sem qualquer fricção psicológica.</span>
+                  <span><strong>Adiar sem consequência:</strong> o atraso acumula e a pressão aparece tarde demais.</span>
                 </li>
                 <li className="comparison-item">
                   <X size={18} color="#ff453a" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <span><strong>Telemetria e contas na nuvem:</strong> Os teus hábitos mais vulneráveis são sincronizados e monitorizados em servidores de terceiros.</span>
+                  <span><strong>Muito ruído:</strong> excesso de funcionalidades que complicam o que devia ser simples.</span>
                 </li>
               </ul>
             </div>
 
             {/* Skipless Protocol */}
             <div className="comparison-card card-skipless">
-              <div className="comparison-badge badge-success">EXECUÇÃO INELUDÍVEL</div>
+              <div className="comparison-badge badge-success">ABORDAGEM SKIPLESS</div>
               <h3 className="comparison-title">O Protocolo Skipless</h3>
               <ul className="comparison-list">
                 <li className="comparison-item">
                   <Check size={18} color="#ff9f0a" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <span><strong>Decisão Binária Obrigatória:</strong> Ou executas o bloco agora, ou assumes a consequência explicada com clareza.</span>
+                  <span><strong>Prioridade clara:</strong> sabes exatamente o que fazer agora, sem dispersão.</span>
                 </li>
                 <li className="comparison-item">
                   <Check size={18} color="#ff9f0a" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <span><strong>Pressão Progressiva:</strong> Silenciar um alerta não o desliga; aumenta a urgência e a frequência de chamada.</span>
+                  <span><strong>Lembretes inteligentes:</strong> o sistema adapta-se para evitar que tarefas críticas sejam esquecidas.</span>
                 </li>
                 <li className="comparison-item">
                   <Check size={18} color="#ff9f0a" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <span><strong>Zero Gamificação Tóxica:</strong> Sem pontuações, sem desespero de streaks perdidas. O teu prémio é a tarefa terminada.</span>
+                  <span><strong>Foco sem distrações:</strong> sem pontos, sem confetis, sem ruído desnecessário.</span>
                 </li>
                 <li className="comparison-item">
                   <Check size={18} color="#ff9f0a" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <span><strong>100% Local-First:</strong> Protegido por encriptação local no chip do teu iPhone. Sem login, sem rastreamento.</span>
+                  <span><strong>Privacidade por padrão:</strong> os teus dados ficam contigo, sempre.</span>
                 </li>
               </ul>
             </div>
@@ -527,10 +527,10 @@ export default function App() {
       {/* Core Mechanics Section */}
       <section className="features-section" id="features">
         <div className="container">
-          <div className="section-tag">A ARQUITETURA</div>
-          <h2 className="section-heading">4 Mecânicas que quebram a tua inércia.</h2>
+          <div className="section-tag">COMO FUNCIONA</div>
+          <h2 className="section-heading">4 benefícios para agir sem adiar.</h2>
           <p className="section-lead">
-            Engenharia de comportamento humano transposta para código nativo no teu bolso.
+            Tudo o que precisas para concluir tarefas importantes com consistência.
           </p>
 
           <div className="features-grid">
@@ -538,9 +538,9 @@ export default function App() {
               <div className="feature-icon-wrapper">
                 <AlertTriangle size={22} />
               </div>
-              <h4 className="feature-box-title">1. A Consequência Explícita</h4>
+              <h4 className="feature-box-title">1. Clareza imediata</h4>
               <p className="feature-box-desc">
-                Ao criar uma tarefa, defines a dor real de falhar ("Ter de pagar jantar", "Reunião tensa com o cliente"). O teu cérebro reage ao custo real, não ao texto abstrato.
+                Define o compromisso de cada tarefa e elimina a ambiguidade que alimenta a procrastinação.
               </p>
             </div>
 
@@ -548,9 +548,9 @@ export default function App() {
               <div className="feature-icon-wrapper">
                 <Volume2 size={22} />
               </div>
-              <h4 className="feature-box-title">2. Escalonamento de Pressão</h4>
+              <h4 className="feature-box-title">2. Prioridade ativa</h4>
               <p className="feature-box-desc">
-                Ignorar uma notificação não a empurra para debaixo do tapete. O Skipless escala automaticamente o alerta para o modo Urgente, exigindo ação imediata.
+                Se adiares algo importante, o Skipless reforça o alerta para te devolver ao essencial.
               </p>
             </div>
 
@@ -558,9 +558,9 @@ export default function App() {
               <div className="feature-icon-wrapper">
                 <Clock size={22} />
               </div>
-              <h4 className="feature-box-title">3. Blocos de Foco Irreversíveis</h4>
+              <h4 className="feature-box-title">3. Arranque rápido</h4>
               <p className="feature-box-desc">
-                Ao carregar em "COMEÇAR", entras num túnel de tempo rígido (10 a 60m). Sem pausas complacentes. Fazes o arranque e o ritmo natural do trabalho assume o controlo.
+                Começa em segundos e ganha tração com blocos curtos que reduzem o atrito inicial.
               </p>
             </div>
 
@@ -568,9 +568,9 @@ export default function App() {
               <div className="feature-icon-wrapper">
                 <ShieldCheck size={22} />
               </div>
-              <h4 className="feature-box-title">4. Privacidade Blindada (Zero Cloud)</h4>
+              <h4 className="feature-box-title">4. Privacidade total</h4>
               <p className="feature-box-desc">
-                Os teus planos e fraquezas de produtividade não pertencem aos servidores de ninguém. O motor opera inteiramente offline na base de dados SQLite do iOS.
+                A tua rotina é pessoal. O Skipless protege os teus dados e não vende a tua atenção.
               </p>
             </div>
           </div>
@@ -580,24 +580,24 @@ export default function App() {
       {/* Stats / Social Proof Section */}
       <section className="stats-section" id="stats">
         <div className="container">
-          <div className="section-tag">VALIDAÇÃO</div>
-          <h2 className="section-heading">Métricas de teste em ambiente real.</h2>
+          <div className="section-tag">RESULTADOS</div>
+          <h2 className="section-heading">Resultados de quem já usa diariamente.</h2>
           <p className="section-lead">
-            Testado internamente por quem tem dias de alta intensidade e não tem tempo para brincar com listas.
+            Progresso visível para profissionais com rotinas exigentes.
           </p>
 
           <div className="stats-grid">
             <div className="stat-item">
               <div className="stat-number">84%</div>
-              <div className="stat-label">REDUÇÃO NO ATRASO DE TAREFAS CRÍTICAS</div>
+              <div className="stat-label">MENOS ATRASOS EM TAREFAS IMPORTANTES</div>
             </div>
             <div className="stat-item">
               <div className="stat-number">0</div>
-              <div className="stat-label">STREAKS OU NOTIFICAÇÕES DE CULPA INÚTIL</div>
+              <div className="stat-label">GAMIFICAÇÃO OU ALERTAS DE CULPA</div>
             </div>
             <div className="stat-item">
               <div className="stat-number">100%</div>
-              <div className="stat-label">PRIVACIDADE LOCAL NO CHIP DO IPHONE</div>
+              <div className="stat-label">CONTROLO DOS DADOS PELO UTILIZADOR</div>
             </div>
           </div>
 
@@ -608,7 +608,7 @@ export default function App() {
               </p>
               <div>
                 <div className="testimonial-author">Tomás Vaz</div>
-                <div className="testimonial-role">Engenheiro de Software & Fundador</div>
+                <div className="testimonial-role">Fundador de startup</div>
               </div>
             </div>
 
@@ -618,7 +618,7 @@ export default function App() {
               </p>
               <div>
                 <div className="testimonial-author">Dra. Sofia Martins</div>
-                <div className="testimonial-role">Advogada Contencioso</div>
+                <div className="testimonial-role">Advogada</div>
               </div>
             </div>
 
@@ -628,7 +628,7 @@ export default function App() {
               </p>
               <div>
                 <div className="testimonial-author">Diogo Ribeiro</div>
-                <div className="testimonial-role">Consultor de Estratégia</div>
+                <div className="testimonial-role">Consultor de estratégia</div>
               </div>
             </div>
           </div>
@@ -641,7 +641,7 @@ export default function App() {
           <div className="section-tag">DÚVIDAS</div>
           <h2 className="section-heading">Perguntas Frequentes.</h2>
           <p className="section-lead">
-            Tudo o que precisas de saber sobre o funcionamento e o lançamento do Skipless.
+            As respostas essenciais antes de entrares na lista de espera.
           </p>
 
           <div className="faq-list">
@@ -671,8 +671,8 @@ export default function App() {
           <div className="cta-banner-glow" />
           <h2 className="cta-heading">Pronto para parar de negociar contigo próprio?</h2>
           <p className="cta-lead">
-            As primeiras vagas no TestFlight estão limitadas para garantir suporte e refinamento próximo.
-            Regista o teu email e recebe o convite imediato assim que a validação abrir.
+            Junta-te à lista de espera e recebe acesso prioritário ao Skipless no iPhone.
+            Sem compromissos, sem spam.
           </p>
 
           <div style={{ maxWidth: '440px', margin: '0 auto' }}>
@@ -714,13 +714,13 @@ export default function App() {
               href="#manifesto"
               className="footer-link"
             >
-              Manifesto
+              Como Funciona
             </a>
             <a
               href="#features"
               className="footer-link"
             >
-              Mecânica
+              Benefícios
             </a>
             <a
               href="#faq"
